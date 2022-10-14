@@ -1,0 +1,10 @@
+article {
+  display: flex;
+  width: 15vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster {
+  width: 75%;
+}
