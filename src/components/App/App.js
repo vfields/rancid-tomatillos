@@ -9,15 +9,22 @@ class App extends React.Component {
     super();
     this.state = {
       movies: movieData.movies,
+      singleMovie: false,
     };
   }
+
+  // showMovieDetails() {}
+  // handlePosterClick
 
   render() {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        <MovieContainer movies={this.state.movies} />
-        <SingleMovie />
+        {!this.state.singleMovie && (
+          <MovieContainer movies={this.state.movies} />
+        )}
+        {/* <MovieContainer movies={this.state.movies} /> */}
+        {/* <SingleMovie /> */}
       </main>
     );
   }
