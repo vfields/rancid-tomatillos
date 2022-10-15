@@ -10,15 +10,26 @@ class App extends React.Component {
     this.state = {
       movies: [],
       selectedMovieId: null,
+      error: ''
     };
   }
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok) {
+          throw new Error(`${response.status}`)
+        }
+        return response.json()
+      })
       .then(data => {
         this.setState({
           movies: data.movies
+        })
+      })
+      .catch(error => {
+        this.setState({
+          error: `Uh oh! That's a ${error.message}, please try again later!`
         })
       })
   }
@@ -42,6 +53,9 @@ class App extends React.Component {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
+        {
+          this.state.error && <h2>{this.state.error}</h2>
+        }
         {this.state.selectedMovieId ? (
           <SingleMovie
             movieId={this.state.selectedMovieId}
