@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import movieData from "../../mockData";
+// import movieData from "../../mockData";
 import MovieContainer from "../MovieContainer/MovieContainer.js";
 import SingleMovie from "../SingleMovie/SingleMovie";
 
@@ -8,18 +8,32 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       selectedMovieId: null,
     };
   }
 
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          movies: data.movies
+        })
+      })
+  }
+
   handlePosterClick = (movieId) => {
     console.log("I was clicked", movieId);
-    this.setState({ selectedMovieId: movieId });
+
+    this.setState({
+      selectedMovieId: movieId,
+    });
   };
 
   handleBackClick = () => {
     console.log("Hello");
+
     this.setState({ selectedMovieId: null });
   };
 
