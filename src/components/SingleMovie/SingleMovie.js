@@ -7,16 +7,27 @@ class SingleMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: {}
+      movie: {},
+      error: ''
     }
   }
 
   componentDidMount() {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieId}`)
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok) {
+          throw new Error(`${response.status}`)
+        }
+        return response.json()
+      })
       .then(data => {
         this.setState({
           movie: data.movie
+        })
+      })
+      .catch(error => {
+        this.setState({
+          error: `Oops! That's a ${error.message}. Something went wrong, try again later!`
         })
       })
   }
@@ -25,6 +36,7 @@ class SingleMovie extends React.Component {
     console.log(this.state.movie)
     return (
       <div className="singleMovieBox">
+      {this.state.error && <h2>{this.state.error}</h2>}
         <img src={this.state.movie.backdrop_path} className="backdrop" />
         <div className="all-movie-details">
           <img src={this.state.movie.poster_path} className="single-poster" />
