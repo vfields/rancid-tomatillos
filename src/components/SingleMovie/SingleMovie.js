@@ -1,7 +1,5 @@
 import React from "react";
 import "./SingleMovie.css";
-// import movieData from "../../mockData";
-// import MovieCard from "../MovieCard/MovieCard.js";
 
 class SingleMovie extends React.Component {
   constructor(props) {
@@ -33,7 +31,6 @@ class SingleMovie extends React.Component {
   }
 
   render() {
-    console.log(this.state.movie)
     return (
       <div className="singleMovieBox">
       {this.state.error && <h2>{this.state.error}</h2>}
@@ -54,12 +51,5 @@ class SingleMovie extends React.Component {
   }
 
 }
-
-
-  //to do convert to class component and change next line to api call
-  // const movieDetails = movieData.movies.find(
-  //   (movie) => movie.id === props.movieId
-  // );
-  // console.log({ movieDetails });
 
 export default SingleMovie;

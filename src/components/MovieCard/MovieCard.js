@@ -7,7 +7,6 @@ function MovieCard(props) {
   };
   return (
     <article onClick={onPosterClick}>
-      {/* <h1>{props.title}</h1> */}
       <img src={props.posterPath} className="poster" />
     </article>
   );
