@@ -9,22 +9,36 @@ class App extends React.Component {
     super();
     this.state = {
       movies: movieData.movies,
-      singleMovie: false,
+      selectedMovieId: null,
     };
   }
 
-  // showMovieDetails() {}
-  // handlePosterClick
+  handlePosterClick = (movieId) => {
+    console.log("I was clicked", movieId);
+    this.setState({ selectedMovieId: movieId });
+  };
+
+  handleBackClick = () => {
+    console.log("Hello");
+    this.setState({ selectedMovieId: null });
+  };
 
   render() {
+    console.log(this.state.movies);
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        {!this.state.singleMovie && (
-          <MovieContainer movies={this.state.movies} />
+        {this.state.selectedMovieId ? (
+          <SingleMovie
+            movieId={this.state.selectedMovieId}
+            handleBackClick={this.handleBackClick}
+          />
+        ) : (
+          <MovieContainer
+            movies={this.state.movies}
+            handlePosterClick={this.handlePosterClick}
+          />
         )}
-        {/* <MovieContainer movies={this.state.movies} /> */}
-        {/* <SingleMovie /> */}
       </main>
     );
   }

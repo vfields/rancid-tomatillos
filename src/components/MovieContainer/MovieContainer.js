@@ -11,6 +11,7 @@ function MovieContainer(props) {
         id={movie.id}
         posterPath={movie.poster_path}
         title={movie.title}
+        handlePosterClick={props.handlePosterClick}
       />
     );
   });
