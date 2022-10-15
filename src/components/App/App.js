@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import movieData from "../../mockData";
 import MovieContainer from "../MovieContainer/MovieContainer.js";
+import SingleMovie from "../SingleMovie/SingleMovie";
 
 class App extends React.Component {
   constructor() {
@@ -15,9 +16,8 @@ class App extends React.Component {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        <MovieContainer
-          movies={this.state.movies}
-        />
+        <MovieContainer movies={this.state.movies} />
+        <SingleMovie />
       </main>
     );
   }
