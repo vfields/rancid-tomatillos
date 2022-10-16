@@ -33,6 +33,8 @@ class SingleMovie extends React.Component {
   }
 
   render() {
+    const date = String(this.state.movie.release_date).split('-');
+    const releaseDate = [date[1], date[2], date[0]].join('/');
     return (
       <div className="singleMovieBox">
         {this.state.error && <h2>{this.state.error}</h2>}
@@ -41,8 +43,8 @@ class SingleMovie extends React.Component {
           <img src={this.state.movie.poster_path} className="single-poster" />
           <div className="movie-details">
             <h1>{this.state.movie.title}</h1>
-            <h2>Rating: {this.state.movie.average_rating}</h2>
-            <h2>Release Date: {this.state.movie.release_date}</h2>
+            <h2>Rating: {Number(this.state.movie.average_rating).toFixed(1)}</h2>
+            <h2>Release Date: {releaseDate}</h2>
           </div>
         </div>
         <button onClick={this.props.handleBackClick}>Back</button>
