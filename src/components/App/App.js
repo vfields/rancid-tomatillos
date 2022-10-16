@@ -9,28 +9,28 @@ class App extends React.Component {
     this.state = {
       movies: [],
       selectedMovieId: null,
-      error: ''
+      error: "",
     };
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if(!response.ok) {
-          throw new Error(`${response.status}`)
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`${response.status}`);
         }
-        return response.json()
+        return response.json();
       })
-      .then(data => {
+      .then((data) => {
         this.setState({
-          movies: data.movies
-        })
+          movies: data.movies,
+        });
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({
-          error: `Uh oh! That's a ${error.message}, please try again later!`
-        })
-      })
+          error: `Uh oh! That's a ${error.message}, please try again later!`,
+        });
+      });
   }
 
   handlePosterClick = (movieId) => {
@@ -47,9 +47,7 @@ class App extends React.Component {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        {
-          this.state.error && <h2>{this.state.error}</h2>
-        }
+        {this.state.error && <h2>{this.state.error}</h2>}
         {this.state.selectedMovieId ? (
           <SingleMovie
             movieId={this.state.selectedMovieId}
