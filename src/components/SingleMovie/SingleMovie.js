@@ -42,9 +42,9 @@ class SingleMovie extends React.Component {
         <div className="all-movie-details">
           <img src={this.state.movie.poster_path} className="single-poster" />
           <div className="movie-details">
-            <h1>{this.state.movie.title}</h1>
-            <h2>Rating: {Number(this.state.movie.average_rating).toFixed(1)}</h2>
-            <h2>Release Date: {releaseDate}</h2>
+            <h1 className="title">{this.state.movie.title}</h1>
+            <h2 className="overview">{this.state.movie.overview}</h2>
+            <h3 className="details">⭐ Rating: {Number(this.state.movie.average_rating).toFixed(1)} | 🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date: {releaseDate}</h3>
           </div>
         </div>
         <button onClick={this.props.handleBackClick}>Back</button>
