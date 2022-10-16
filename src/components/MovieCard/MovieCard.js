@@ -1,13 +1,10 @@
 import React from "react";
 import "./MovieCard.css";
 
-function MovieCard(props) {
-  const onPosterClick = () => {
-    props.handlePosterClick(props.id);
-  };
+function MovieCard({ id, posterPath, handlePosterClick }) {
   return (
-    <article onClick={onPosterClick}>
-      <img src={props.posterPath} className="poster" />
+    <article onClick={() => handlePosterClick(id)}>
+      <img src={posterPath} className="poster" />
     </article>
   );
 }
