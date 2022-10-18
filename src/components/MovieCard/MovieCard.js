@@ -1,9 +1,9 @@
 import React from "react";
 import "./MovieCard.css";
 
-function MovieCard({ id, posterPath, handlePosterClick }) {
+function MovieCard({ id, posterPath }) {
   return (
-    <article onClick={() => handlePosterClick(id)}>
+    <article>
       <img src={posterPath} className="poster" />
     </article>
   );

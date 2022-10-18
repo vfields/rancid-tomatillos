@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 import MovieContainer from "../MovieContainer/MovieContainer.js";
 import SingleMovie from "../SingleMovie/SingleMovie";
+import { Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      selectedMovieId: null,
       error: "",
     };
   }
@@ -33,32 +33,36 @@ class App extends React.Component {
       });
   }
 
-  handlePosterClick = (movieId) => {
-    this.setState({
-      selectedMovieId: movieId,
-    });
-  };
+  // handlePosterClick = (movieId) => {
+  //   this.setState({
+  //     selectedMovieId: movieId,
+  //   });
+  // };
 
-  handleBackClick = () => {
-    this.setState({ selectedMovieId: null });
-  };
+  // handleBackClick = () => {
+  //   this.setState({ selectedMovieId: null });
+  // };
 
   render() {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {this.state.selectedMovieId ? (
-          <SingleMovie
-            movieId={this.state.selectedMovieId}
-            handleBackClick={this.handleBackClick}
-          />
-        ) : (
-          <MovieContainer
-            movies={this.state.movies}
-            handlePosterClick={this.handlePosterClick}
-          />
-        )}
+
+        <Route exact path="/">
+          <MovieContainer movies={this.state.movies} />
+        </Route>
+
+        <Route
+          exact
+          path="/:movieId"
+          render={({ match }) => {
+            const movieToRender = this.state.movies.find(
+              (movie) => movie.id === parseInt(match.params.movieId)
+            );
+            return <SingleMovie movieId={movieToRender.id} />;
+          }}
+        />
       </main>
     );
   }
