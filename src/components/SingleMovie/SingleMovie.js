@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./SingleMovie.css";
 // import "./assets/home.svg";
 
@@ -52,7 +53,9 @@ class SingleMovie extends React.Component {
             </h3>
           </div>
         </div>
-        <button onClick={this.props.handleBackClick}>Back</button>
+        <Link to="/">
+          <button>Back</button>
+        </Link>
       </div>
     );
   }

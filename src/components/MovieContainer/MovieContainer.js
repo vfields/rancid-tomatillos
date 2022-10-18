@@ -1,17 +1,18 @@
 import React from "react";
 import "./MovieContainer.css";
 import MovieCard from "../MovieCard/MovieCard.js";
+import { NavLink } from "react-router-dom";
 
-function MovieContainer({ movies, handlePosterClick }) {
+function MovieContainer({ movies }) {
   const movieCards = movies.map((movie) => {
     return (
-      <MovieCard
-        key={movie.id}
-        id={movie.id}
-        posterPath={movie.poster_path}
-        title={movie.title}
-        handlePosterClick={handlePosterClick}
-      />
+      <NavLink to={`/${movie.id}`} key={movie.id}>
+        <MovieCard
+          id={movie.id}
+          posterPath={movie.poster_path}
+          title={movie.title}
+        />
+      </NavLink>
     );
   });
 
