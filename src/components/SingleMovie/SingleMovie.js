@@ -1,5 +1,6 @@
 import React from "react";
 import "./SingleMovie.css";
+// import "./assets/home.svg";
 
 class SingleMovie extends React.Component {
   constructor(props) {
@@ -33,8 +34,8 @@ class SingleMovie extends React.Component {
   }
 
   render() {
-    const date = String(this.state.movie.release_date).split('-');
-    const releaseDate = [date[1], date[2], date[0]].join('/');
+    const date = String(this.state.movie.release_date).split("-");
+    const releaseDate = [date[1], date[2], date[0]].join("/");
     return (
       <div className="singleMovieBox">
         {this.state.error && <h2>{this.state.error}</h2>}
@@ -44,7 +45,11 @@ class SingleMovie extends React.Component {
           <div className="movie-details">
             <h1 className="title">{this.state.movie.title}</h1>
             <h2 className="overview">{this.state.movie.overview}</h2>
-            <h3 className="details">⭐ Rating: {Number(this.state.movie.average_rating).toFixed(1)} | 🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date: {releaseDate}</h3>
+            <h3 className="details">
+              ⭐ Rating: {Number(this.state.movie.average_rating).toFixed(1)} |
+              🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date:{" "}
+              {releaseDate}
+            </h3>
           </div>
         </div>
         <button onClick={this.props.handleBackClick}>Back</button>
