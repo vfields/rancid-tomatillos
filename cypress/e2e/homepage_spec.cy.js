@@ -21,7 +21,9 @@ describe('Rancid Tomatillos home page flows', () => {
 //  As a user, when I click on a movie, I’m shown additional details about that movie.
 
   it('should be test', () => {
-    cy.contains('Rancid')
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json' });
+    cy.visit('http://localhost:3000');
+    // cy.get('section').get('a') // if the href = ('694919'), then .click()
   });
 
 });
