@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./SingleMovie.css";
-// import "./assets/home.svg";
 
 class SingleMovie extends React.Component {
   constructor(props) {

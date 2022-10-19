@@ -33,16 +33,6 @@ class App extends React.Component {
       });
   }
 
-  // handlePosterClick = (movieId) => {
-  //   this.setState({
-  //     selectedMovieId: movieId,
-  //   });
-  // };
-
-  // handleBackClick = () => {
-  //   this.setState({ selectedMovieId: null });
-  // };
-
   render() {
     return (
       <main>
