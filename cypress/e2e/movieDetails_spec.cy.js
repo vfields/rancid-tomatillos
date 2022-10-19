@@ -26,7 +26,3 @@ describe('Rancid Tomatillos single movie display flows', () => {
   });
 
 });
-
-/*
-As a user, if the GET network request fails, I can see an error handling message.
-*/
