@@ -22,7 +22,7 @@ describe('Rancid Tomatillos single movie display flows', () => {
 // When a movie details page is rendered, the URL updates to reflect that movie’s unique ID.
 
   it('Should update the URL to reflect the id of the movie whose details are currently displayed', () => {
-      cy.url().should('include', '694919');
+      cy.url().should('eq', 'http://localhost:3000/694919');
   });
 
 // As a user, when on the selected movie display page, I can press a button and return to the home page.
@@ -35,7 +35,7 @@ describe('Rancid Tomatillos single movie display flows', () => {
 
 // As a user, having visited more than just the home page, I can click the browser forward & back arrows to navigate.
 
-  it('Should be able to press back button and return to home page, where URL is restored to original address', () => {
+  it('Should be able to press back and forward buttons to navigate having visited more than one page', () => {
     cy.get('button').click()
       .go('back')
       .go('forward')
