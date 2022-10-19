@@ -4,7 +4,11 @@ describe('Rancid Tomatillos home page flows', () => {
 // As a user, when I load the application, I can see a collection of movies.
 
   it('Should be able to visit the home page and render the correct elements', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json' });
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      ok: true,
+      fixture: 'movies.json'
+    });
     cy.visit('http://localhost:3000');
     cy.get('h1').contains('Rancid Tomatillos');
     cy.get('section').get('a').get('article');
