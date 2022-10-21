@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import MovieContainer from "../MovieContainer/MovieContainer.js";
 import SingleMovie from "../SingleMovie/SingleMovie";
+import { getMovieData } from "./../../apiCalls";
 import { Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -14,13 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`${response.status}`);
-        }
-        return response.json();
-      })
+    getMovieData()
       .then((data) => {
         this.setState({
           movies: data.movies,

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { getMovieData } from "./../../apiCalls";
+import "./../../apiCalls";
 import "./SingleMovie.css";
 
 class SingleMovie extends React.Component {
@@ -12,15 +14,7 @@ class SingleMovie extends React.Component {
   }
 
   componentDidMount() {
-    fetch(
-      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieId}`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`${response.status}`);
-        }
-        return response.json();
-      })
+    getMovieData(this.props.movieId)
       .then((data) => {
         this.setState({
           movie: data.movie,
