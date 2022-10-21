@@ -3,7 +3,7 @@ import "./MovieCard.css";
 
 function MovieCard({ id, title, posterPath }) {
   return (
-    <article>
+    <article className="card">
       <img src={posterPath} alt={`a poster of ${title}`} className="poster" />
     </article>
   );

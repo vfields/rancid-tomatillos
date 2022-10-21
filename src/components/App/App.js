@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import MovieContainer from "../MovieContainer/MovieContainer.js";
+import Header from "../Header/Header"
+import MovieContainer from "../MovieContainer/MovieContainer";
 import SingleMovie from "../SingleMovie/SingleMovie";
 import { getMovieData } from "./../../apiCalls";
 import { Route } from "react-router-dom";
@@ -31,7 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <h1>Rancid Tomatillos</h1>
+        <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
 
         <Route exact path="/">
