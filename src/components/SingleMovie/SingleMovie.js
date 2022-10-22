@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getMovieData } from "./../../apiCalls";
+import { getMovieData, getMovieVideoData } from "./../../apiCalls";
 import { ReactComponent as Logo } from "../../assets/exit.svg";
 import ReactStars from "react-stars";
+import Trailer from "../Trailer/Trailer";
+import MicroModal from "react-micro-modal";
 import "./../../apiCalls";
 import "./SingleMovie.css";
 
@@ -13,11 +15,12 @@ class SingleMovie extends React.Component {
       loading: false,
       movie: {},
       error: "",
+      trailer: {},
     };
   }
 
   componentDidMount() {
-    this.setState({ loading: true })
+    this.setState({ loading: true });
     getMovieData(this.props.movieId)
       .then((data) => {
         this.setState({
@@ -31,6 +34,18 @@ class SingleMovie extends React.Component {
           error: `Oops! That's a ${error.message}. Something went wrong, try again later!`,
         });
       });
+
+    getMovieVideoData(this.props.movieId)
+      .then((data) => {
+        this.setState({
+          trailer: data.videos.find((video) => video.type === "Trailer"),
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          error: `Oops! That's a ${error.message}. Something went wrong, try again later!`,
+        });
+      });
     this.props.clearSearch();
   }
 
@@ -39,13 +54,30 @@ class SingleMovie extends React.Component {
     const releaseDate = [date[1], date[2], date[0]].join("/");
     return (
       <div className="singleMovieBox">
-        {this.state.loading && <span className="loading">{this.state.loading}</span>}
+        {this.state.loading && (
+          <span className="loading">{this.state.loading}</span>
+        )}
         {this.state.error && <span className="error">{this.state.error}</span>}
-        <img
-          src={this.state.movie.backdrop_path}
-          alt={`a backdrop poster of ${this.state.movie.title}`}
-          className="backdrop"
-        />
+
+        <MicroModal
+          trigger={(open) => (
+            <img
+              onClick={open}
+              src={this.state.movie.backdrop_path}
+              alt={`a backdrop poster of ${this.state.movie.title}`}
+              className="backdrop"
+            />
+          )}
+        >
+          {(close) => (
+            <div className="trailer-box">
+              <div>
+                <Trailer trailer={this.state.trailer.key} />
+              </div>
+              <button onClick={close}>Close!</button>
+            </div>
+          )}
+        </MicroModal>
         <div className="all-movie-details">
           <img
             src={this.state.movie.poster_path}
