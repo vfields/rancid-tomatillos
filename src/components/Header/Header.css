@@ -1,17 +1,18 @@
 .header-container {
+  align-items: center;
   background-image: url('../../assets/headerBackground.png');
-  background-size: cover;
+  background-size: 100vw 45vh;
   display: flex;
   width: 100vw;
-  height: 45vh;
+  height: 43vh;
   justify-content: center;
-  align-items: center;
   margin-bottom: 5%;
 }
 
 h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 4.5em;
+  font-size: 11vh;
+  text-shadow: 2px 3px 8px #502b2b;
 }
 
 .o {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from "../Header/Header"
+import Header from "../Header/Header";
 import MovieContainer from "../MovieContainer/MovieContainer";
 import SingleMovie from "../SingleMovie/SingleMovie";
 import { getMovieData } from "./../../apiCalls";
