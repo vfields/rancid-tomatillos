@@ -8,14 +8,14 @@ article {
 .poster {
   box-shadow: 0px 5px 12px 3px rgb(252 237 191 / 50%);
   margin-top: -7%;
-  transition: 0.75s;
   width: 100%;
 }
 
 .poster:hover {
   transform: scale(1.1);
+  transition: 0.75s;
 }
 
-.star-container {
+.star-main-container {
   margin-top: 9%;
 }

@@ -43,6 +43,7 @@
   font-size: 7vh;
   margin-bottom: 0;
   margin-top: 2%;
+  text-align: center;
 }
 
 .overview {
@@ -53,7 +54,7 @@
 }
 
 .star-container {
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 .exit-button {

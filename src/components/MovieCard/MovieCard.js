@@ -6,7 +6,7 @@ function MovieCard({ id, title, posterPath, rating }) {
   return (
     <article className="card">
       <img src={posterPath} alt={`a poster of ${title}`} className="poster" />
-      <div className="star-container">
+      <div className="star-main-container">
         <ReactStars
           className="react-stars"
           count={5}
