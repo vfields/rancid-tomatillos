@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getMovieData } from "./../../apiCalls";
+import { ReactComponent as Logo } from "../../assets/exit.svg";
+import ReactStars from "react-stars";
 import "./../../apiCalls";
 import "./SingleMovie.css";
 
@@ -33,20 +35,40 @@ class SingleMovie extends React.Component {
     return (
       <div className="singleMovieBox">
         {this.state.error && <h2>{this.state.error}</h2>}
-        <img src={this.state.movie.backdrop_path} alt={`a backdrop poster of ${this.state.movie.title}`} className="backdrop" />
+        <img
+          src={this.state.movie.backdrop_path}
+          alt={`a backdrop poster of ${this.state.movie.title}`}
+          className="backdrop"
+        />
         <div className="all-movie-details">
-          <img src={this.state.movie.poster_path} alt={`a poster of ${this.state.movie.title}`} className="single-poster" />
+          <img
+            src={this.state.movie.poster_path}
+            alt={`a poster of ${this.state.movie.title}`}
+            className="single-poster"
+          />
           <div className="movie-details">
             <h1 className="title">{this.state.movie.title}</h1>
             <h2 className="overview">{this.state.movie.overview}</h2>
+            <div className="star-container">
+              <ReactStars
+                className="react-stars"
+                count={5}
+                value={this.state.movie.average_rating / 2}
+                size={15}
+                color1={"#5c5c5c"}
+                color2={"#e2b837"}
+              />
+            </div>
             <h3 className="details">
-              ⭐ Rating: {Number(this.state.movie.average_rating).toFixed(1)} |
-              🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date: {releaseDate}
+              🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date:{" "}
+              {releaseDate}
             </h3>
           </div>
         </div>
         <Link to="/">
-          <button>Back</button>
+          <button className="exit-button">
+            <Logo className="logo" />
+          </button>
         </Link>
       </div>
     );

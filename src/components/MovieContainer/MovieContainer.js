@@ -10,6 +10,7 @@ function MovieContainer({ movies }) {
         <MovieCard
           id={movie.id}
           posterPath={movie.poster_path}
+          rating={movie.average_rating}
           title={movie.title}
         />
       </NavLink>
