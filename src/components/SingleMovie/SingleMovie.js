@@ -50,7 +50,6 @@ class SingleMovie extends React.Component {
   }
 
   render() {
-    // console.log(this.state.movie.genres);
     const date = String(this.state.movie.release_date).split("-");
     const releaseDate = [date[1], date[2], date[0]].join("/");
     const genres = String(this.state.movie.genres).split(",");
@@ -61,7 +60,6 @@ class SingleMovie extends React.Component {
           <span className="loading">{this.state.loading}</span>
         )}
         {this.state.error && <span className="error">{this.state.error}</span>}
-
         <MicroModal
           trigger={(open) => (
             <img
