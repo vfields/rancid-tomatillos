@@ -70,11 +70,13 @@ class SingleMovie extends React.Component {
           )}
         >
           {(close) => (
-            <div className="trailer-box">
+            <div className="modal">
               <div>
                 <Trailer trailer={this.state.trailer.key} />
               </div>
-              <button onClick={close}>Close!</button>
+              <button className="close-button" onClick={close}>
+                Close!
+              </button>
             </div>
           )}
         </MicroModal>
