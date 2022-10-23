@@ -20,13 +20,13 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form>
-        <input
-          type="text"
-          name="search"
-          value={this.state.search}
-          placeholder="Search your favorite movie title!"
-          onChange={this.handleChange}
-        />
+          <input
+            type="text"
+            name="search"
+            value={this.state.search}
+            placeholder="Search your favorite movie title!"
+            onChange={this.handleChange}
+          />
       </form>
     )
   }
