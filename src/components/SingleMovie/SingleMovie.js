@@ -27,6 +27,7 @@ class SingleMovie extends React.Component {
           error: `Oops! That's a ${error.message}. Something went wrong, try again later!`,
         });
       });
+    this.props.clearSearch();
   }
 
   render() {

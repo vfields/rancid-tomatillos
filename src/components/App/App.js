@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import MovieContainer from "../MovieContainer/MovieContainer";
 import SingleMovie from "../SingleMovie/SingleMovie";
+import SearchBar from "../SearchBar/SearchBar"
 import { getMovieData } from "./../../apiCalls";
 import { Route } from "react-router-dom";
 
@@ -12,6 +13,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       error: "",
+      searchBar: ""
     };
   }
 
@@ -29,14 +31,29 @@ class App extends React.Component {
       });
   }
 
+  updateSearch = (value) => {
+    this.setState({
+      searchBar: value
+    });
+  }
+
+  clearSearch = () => {
+    this.setState({
+      searchBar: ''
+    })
+  }
+
   render() {
     return (
       <main>
         <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
-
         <Route exact path="/">
-          <MovieContainer movies={this.state.movies} />
+          <SearchBar updateSearch={this.updateSearch} />
+          <MovieContainer
+            movies={this.state.movies}
+            searchBar={this.state.searchBar}
+          />
         </Route>
 
         <Route
@@ -46,7 +63,7 @@ class App extends React.Component {
             const movieToRender = this.state.movies.find(
               (movie) => movie.id === parseInt(match.params.movieId)
             );
-            return <SingleMovie movieId={movieToRender.id} />;
+            return <SingleMovie movieId={movieToRender.id} clearSearch={this.clearSearch} />;
           }}
         />
       </main>
