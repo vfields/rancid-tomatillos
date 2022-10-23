@@ -1,1 +1,14 @@
+.error-container,
+.loading-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.error,
+.loading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5vh;
+  color: #CD1111;
+}

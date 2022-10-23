@@ -8,6 +8,13 @@
   width: 90vw;
 }
 
+.error,
+.loading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5vh;
+  color: #CD1111;
+}
+
 .backdrop {
   box-shadow: 0px 5px 12px 3px rgb(252 237 191 / 50%);
   height: 75%;
@@ -59,7 +66,7 @@
 
 .exit-button {
   align-items: center;
-  background-color: #000000;
+  background-color: #120103;
   border: none;
   display: flex;
   justify-content: center;

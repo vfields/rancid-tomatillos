@@ -5,5 +5,19 @@ section {
     grid-column-gap: 1%;
     grid-row-gap: 3%;
     align-items: center;
-    justify-items: center
+    justify-items: center;
+    margin-top: 1%;
+}
+
+.error-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5vh;
+  color: #CD1111;
 }
