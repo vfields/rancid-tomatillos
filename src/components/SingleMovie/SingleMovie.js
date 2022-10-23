@@ -10,20 +10,24 @@ class SingleMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
       movie: {},
       error: "",
     };
   }
 
   componentDidMount() {
+    this.setState({ loading: true })
     getMovieData(this.props.movieId)
       .then((data) => {
         this.setState({
+          loading: false,
           movie: data.movie,
         });
       })
       .catch((error) => {
         this.setState({
+          loading: false,
           error: `Oops! That's a ${error.message}. Something went wrong, try again later!`,
         });
       });
@@ -35,6 +39,7 @@ class SingleMovie extends React.Component {
     const releaseDate = [date[1], date[2], date[0]].join("/");
     return (
       <div className="singleMovieBox">
+        {this.state.loading && <span className="loading">{this.state.loading}</span>}
         {this.state.error && <span className="error">{this.state.error}</span>}
         <img
           src={this.state.movie.backdrop_path}
