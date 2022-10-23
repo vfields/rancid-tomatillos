@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      loading: false,
       movies: [],
       error: "",
       searchBar: ""
@@ -18,14 +19,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({ loading: true })
     getMovieData()
       .then((data) => {
         this.setState({
+          loading: false,
           movies: data.movies,
         });
       })
       .catch((error) => {
         this.setState({
+          loading: false,
           error: `Uh oh! That's a ${error.message}, please try again later!`,
         });
       });
@@ -53,6 +57,7 @@ class App extends React.Component {
           <MovieContainer
             movies={this.state.movies}
             searchBar={this.state.searchBar}
+            loading={this.state.loading}
           />
         </Route>
 

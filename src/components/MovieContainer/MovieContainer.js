@@ -3,7 +3,7 @@ import "./MovieContainer.css";
 import MovieCard from "../MovieCard/MovieCard.js";
 import { NavLink } from "react-router-dom";
 
-function MovieContainer({ movies, searchBar }) {
+function MovieContainer({ movies, searchBar, loading }) {
   let movieCards;
 
   if (!searchBar) {
@@ -37,11 +37,15 @@ function MovieContainer({ movies, searchBar }) {
     }, [])
   }
 
-  const error = movieCards.length === 0 ? true : false;
+  let error = movieCards.length === 0 ? true : false;
+
+  if (loading && error) {
+    error = false;
+  }
 
   return (
     <div>
-      {error && <div class="error-container"><p class="error">Sorry, that title doesn't exist! Try another title.</p></div>}
+      {error && <div className="error-container"><span className="error">Sorry, that title doesn't exist! Try another title.</span></div>}
       <section>
         {movieCards}
       </section>
