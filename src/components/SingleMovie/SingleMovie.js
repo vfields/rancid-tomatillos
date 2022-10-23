@@ -50,8 +50,11 @@ class SingleMovie extends React.Component {
   }
 
   render() {
+    // console.log(this.state.movie.genres);
     const date = String(this.state.movie.release_date).split("-");
     const releaseDate = [date[1], date[2], date[0]].join("/");
+    const genres = String(this.state.movie.genres).split(",");
+    const displayedGenres = genres.join(" | ");
     return (
       <div className="singleMovieBox">
         {this.state.loading && (
@@ -103,6 +106,7 @@ class SingleMovie extends React.Component {
               🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date:{" "}
               {releaseDate}
             </h3>
+            <h3 className="display-genre">{displayedGenres}</h3>
           </div>
         </div>
         <Link to="/">

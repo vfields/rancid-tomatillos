@@ -95,6 +95,11 @@
   margin-top: 4%;
 }
 
+.display-genre {
+  margin-top: 0;
+  margin-bottom: 3%;
+}
+
 .exit-button {
   align-items: center;
   background-color: #120103;
