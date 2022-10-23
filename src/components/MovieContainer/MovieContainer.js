@@ -40,10 +40,12 @@ function MovieContainer({ movies, searchBar }) {
   const error = movieCards.length === 0 ? true : false;
 
   return (
-    <section>
-      {error && <h1>Sorry, that title doesn't exist!</h1>}
-      {movieCards}
-    </section>
+    <div>
+      {error && <div class="error-container"><p class="error">Sorry, that title doesn't exist! Try another title.</p></div>}
+      <section>
+        {movieCards}
+      </section>
+    </div>
   )
 }
 
