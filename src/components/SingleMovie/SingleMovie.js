@@ -35,7 +35,7 @@ class SingleMovie extends React.Component {
     const releaseDate = [date[1], date[2], date[0]].join("/");
     return (
       <div className="singleMovieBox">
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {this.state.error && <span className="error">{this.state.error}</span>}
         <img
           src={this.state.movie.backdrop_path}
           alt={`a backdrop poster of ${this.state.movie.title}`}

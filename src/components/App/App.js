@@ -51,9 +51,10 @@ class App extends React.Component {
     return (
       <main>
         <Header />
-        {this.state.error && <h2>{this.state.error}</h2>}
         <Route exact path="/">
           <SearchBar updateSearch={this.updateSearch} />
+          {this.state.loading && <div className="loading-container"><span className="loading">Loading...</span></div>}
+          {this.state.error && <div className="error-container"><span className="error">{this.state.error}</span></div>}
           <MovieContainer
             movies={this.state.movies}
             searchBar={this.state.searchBar}
