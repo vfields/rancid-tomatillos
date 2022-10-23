@@ -31,7 +31,8 @@
   display: flex;
   position: fixed;
   top: 20%;
-  left: 23%;
+  left: 20%;
+  right: 20%;
   background-color: rgba(0, 0, 0, 0.9);
   align-items: center;
   flex-direction: column;
