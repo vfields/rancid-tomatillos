@@ -25,6 +25,19 @@ describe('Rancid Tomatillos home page flows', () => {
       .contains(`Uh oh! That's a 404, please try again later!`);
   });
 
+  it('Should be able to search for movies by title', () => {
+    cy.get('input')
+      .type('Money')
+      .get('[alt="a poster of Money Plane"]');
+  });
+
+  it('Should display message to user if search yields no movies', () => {
+    cy.get('input')
+      .type('Jaws')
+      .get('.error')
+      .contains(`Sorry, that title doesn't exist! Try another title.`)
+  });
+
   it('Should be able to click on an invidual movie and display movie details', () => {
     cy.get('article').first().click()
       .get('.movie-details').contains('A professional thief with $40 million in debt')
