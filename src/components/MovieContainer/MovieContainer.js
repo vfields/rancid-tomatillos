@@ -9,7 +9,7 @@ function MovieContainer({ movies, searchBar, loading }) {
   if (!searchBar) {
     movieCards = movies.map((movie) => {
       return (
-        <NavLink to={`/${movie.id}`} key={movie.id}>
+        <NavLink to={`/movies/${movie.id}`} key={movie.id}>
           <MovieCard
             id={movie.id}
             posterPath={movie.poster_path}
@@ -23,7 +23,7 @@ function MovieContainer({ movies, searchBar, loading }) {
     movieCards = movies.reduce((acc, movie) => {
       if (movie.title.toLowerCase().includes(searchBar.toLowerCase())) {
         acc.push(
-          <NavLink to={`/${movie.id}`} key={movie.id}>
+          <NavLink to={`/movies/${movie.id}`} key={movie.id}>
             <MovieCard
               id={movie.id}
               posterPath={movie.poster_path}
