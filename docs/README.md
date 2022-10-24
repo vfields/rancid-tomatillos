@@ -32,11 +32,18 @@
 </details>
 
 ## About The Project
-A few sentences about the project.
+A few sentence about this project.
 <br>
-<p align="center">
-    <img width="500" src="https://media.giphy.com/media/JpoDBwkRLFbMkR3Cks/giphy.gif" alt="Rancid Tomatillos preview gif">
-</p>
+
+#### Search Bar
+![Selection Bar](https://user-images.githubusercontent.com/63877492/197603767-134d2ca4-83a9-4b9d-aba2-f1af08636ffc.gif)
+
+#### Trailer
+![Trailer](https://user-images.githubusercontent.com/63877492/197618421-a533f895-9145-4ce5-84f4-bee5cd82bebd.gif)
+
+#### Bad URL Handling
+![Bad URL Handling](https://user-images.githubusercontent.com/63877492/197593670-a19fd3ac-18f8-4538-9c7c-2e46694a0c77.gif)
+
 <br />
 This paired project was assigned at during the third module of Turing's Front-End Engineering program, about 13-14 weeks into its students learning how to code. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html">this</a> project spec.
 
@@ -48,6 +55,7 @@ This paired project was assigned at during the third module of Turing's Front-En
 ![HTML5][HTML-shield]
 ![Cypress][Cypress-shield]
 ![NPM][NPM-shield]
+![Vercel][Vercel-shield]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,3 +104,4 @@ Dinne Kopelevich | [LinkedIn](https://www.linkedin.com/in/dinne-kopelevich-17458
 [HTML-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [Cypress-shield]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
 [NPM-shield]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
+[Vercel-shield]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
