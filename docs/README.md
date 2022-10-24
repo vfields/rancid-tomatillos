@@ -35,14 +35,14 @@
 Rancid Tomatillos displays a database of movies, and allows you to search for your favorites by title! Want to learn more about a film? Click it, and you'll be redirected to a page that houses that movie's unique information, and even grants you access to the movie's trailer, if you'd like!
 <br>
 
-#### Search Bar
-![Selection Bar](https://user-images.githubusercontent.com/63877492/197603767-134d2ca4-83a9-4b9d-aba2-f1af08636ffc.gif)
+<h3 align="center">Search Bar:</h3>
+<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/197603767-134d2ca4-83a9-4b9d-aba2-f1af08636ffc.gif" alt="Rancid Tomatillos search bar preview gif"></p>
 
-#### Trailer
-![Trailer](https://user-images.githubusercontent.com/63877492/197618421-a533f895-9145-4ce5-84f4-bee5cd82bebd.gif)
+<h3 align="center">Trailer Preview:</h3>
+<p align="center"><img width="750" src="https://media.giphy.com/media/KImDwiv7rDsVWuGoPn/giphy.gif" alt="Rancid Tomatillos trailer preview gif"></p>
 
-#### Bad URL Handling
-![Bad URL Handling](https://user-images.githubusercontent.com/63877492/197593670-a19fd3ac-18f8-4538-9c7c-2e46694a0c77.gif)
+<h3 align="center">Bad URL Handling:</h3>
+<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/197593670-a19fd3ac-18f8-4538-9c7c-2e46694a0c77.gif" alt="Rancid Tomatillos bad URL preview gif"></p>
 
 <br />
 This paired project was assigned at during the third module of Turing's Front-End Engineering program, about 13-14 weeks into its students learning how to code. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html">this</a> project spec.
