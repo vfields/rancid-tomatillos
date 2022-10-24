@@ -32,7 +32,7 @@
 </details>
 
 ## About The Project
-A few sentence about this project.
+Rancid Tomatillos displays a database of movies, and allows you to search for your favorites by title! Want to learn more about a film? Click it, and you'll be redirected to a page that houses that movie's unique information, and even grants you access to the movie's trailer, if you'd like!
 <br>
 
 #### Search Bar
@@ -70,23 +70,23 @@ This paired project was assigned at during the third module of Turing's Front-En
 
 ## Roadmap
 
-- [ ] Create travel agent interaction
-- [ ] Utilize DELETE network request via travel agent interaction
+- [ ] Create built-in databases using Express and Node.js
+- [ ] Enhance search feature to handle finding movies by genre
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 
-- Utilizes class-to-class interaction and a robust Mocha and Chai testing suite
-- Implements both GET and POST network requests via fetch API to retrieve, display, and add new user data
-- Handles both network request- and user-errors
+- Created with React, this single-page application utilizes React Router to create a multi-page user experience
+- Implements acceptance testing with a robust Cypress testing suite featuring error-handling as well as happy and sad paths
+- Utilizes RESTful APIs to populate displays, and features third-party dependencies to enhance user experience
 
 ### Reflections
 <b>Wins:</b><br>
-Although I worked with asynchronous JavaScript during this module's group project, I feel this solo project solidified my understanding of it. This project also allowed me time to dedicate to better understanding error-handling, and I feel I've a firmer grasp on handling both network request and user generated errors for it!
+Creating this application bolstered our understanding of React's data down, actions up model. We drafted a component tree that reflects the data's flow, and were able to build on top of this foundation by making a search bar that relies on data shared between sibling components. We also installed and incorporated componenets from different libraries to further enhance user experience, and are really excited about the embedded movie trailer videos!
 <p>
 <b>Challenges:</b><br>
-While I can see significant improvement in my ability to connect data and write dynamic code, I still feel there is some unnecessary repetition in my script and, therefore, I know that there is a cleaner/more dynamic solution to connect these data.
+Working with React Router posed a unique challenge when we were trying to handle bad URLs. With some dedication and trial-and-error, we were able to come to a working solution to redirect users to a catch-all error component that offers an easy way back to the home page.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
