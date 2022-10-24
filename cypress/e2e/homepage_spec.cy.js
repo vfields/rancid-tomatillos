@@ -43,4 +43,13 @@ describe('Rancid Tomatillos home page flows', () => {
       .get('.movie-details').contains('A professional thief with $40 million in debt')
   });
 
+  it('Should display a message to user if a bad url is entered, and user should be able to navigate home', () => {
+    cy.visit('http://localhost:3000/potato')
+      .get('.error')
+      .contains(`Oops! Looks like that isn't a valid URL. Please try again.`)
+      .get('button')
+      .click()
+      .url('eq', 'http://localhost:3000/')
+  });
+
 });
