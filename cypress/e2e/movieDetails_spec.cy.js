@@ -37,6 +37,28 @@ describe("Rancid Tomatillos single movie display flows", () => {
       .should("eq", "http://localhost:3000/694919");
   });
 
+  it("should be able to handle movies without trailers", () => {
+    cy.visit("http://localhost:3000").get("article").last().click();
+    cy.get(".backdrop")
+      .click()
+      .intercept(
+        "GET",
+        "https://rancid-tomatillos.herokuapp.com/api/v2/movies/737173",
+        { fixture: "errorMovie" }
+      )
+      .intercept(
+        "GET",
+        "https://rancid-tomatillos.herokuapp.com/api/v2/movies/737173/videos",
+        { fixture: "errorTrailer" }
+      )
+      .get(".modal")
+      .should("not.be.empty")
+      .get(".close-button")
+      .click()
+      .url()
+      .should("eq", "http://localhost:3000/737173");
+  });
+
   it("Should be able to press back button and return to home page, where URL is restored to original address", () => {
     cy.get("button").click().url().should("eq", "http://localhost:3000/");
   });
