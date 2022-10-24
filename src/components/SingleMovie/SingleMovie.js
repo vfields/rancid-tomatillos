@@ -73,7 +73,9 @@ class SingleMovie extends React.Component {
           {(close) => (
             <div className="modal">
               <div>
-                <Trailer trailer={this.state.trailer.key} />
+                <Trailer
+                  trailer={this.state.trailer ? this.state.trailer.key : "None"}
+                />
               </div>
               <button className="close-button" onClick={close}>
                 Close!
@@ -101,7 +103,7 @@ class SingleMovie extends React.Component {
               />
             </div>
             <h3 className="details">
-              🎥 Runtime: {this.state.movie.runtime} | 📅 Release Date:{" "}
+              🎥 Runtime: {this.state.movie.runtime} mins | 📅 Release Date:{" "}
               {releaseDate}
             </h3>
             <h3 className="display-genre">{displayedGenres}</h3>
