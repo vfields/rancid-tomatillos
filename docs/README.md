@@ -45,7 +45,7 @@ Rancid Tomatillos displays a database of movies, and allows you to search for yo
 <p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/197593670-a19fd3ac-18f8-4538-9c7c-2e46694a0c77.gif" alt="Rancid Tomatillos bad URL preview gif"></p>
 
 <br />
-This paired project was assigned at during the third module of Turing's Front-End Engineering program, about 13-14 weeks into its students learning how to code. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html">this</a> project spec.
+This paired project was assigned during the third module of Turing's Front-End Engineering program, about 13-14 weeks into its students learning how to code. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html">this</a> project spec.
 
 ### Built With
 
@@ -83,7 +83,7 @@ This paired project was assigned at during the third module of Turing's Front-En
 
 ### Reflections
 <b>Wins:</b><br>
-Creating this application bolstered our understanding of React's data down, actions up model. We drafted a component tree that reflects the data's flow, and were able to build on top of this foundation by making a search bar that relies on data shared between sibling components. We also installed and incorporated componenets from different libraries to further enhance user experience, and are really excited about the embedded movie trailer videos!
+Creating this application bolstered our understanding of React's data down, actions up model. We drafted a component tree that reflects the data's flow, and were able to build on top of this foundation by making a search bar that relies on data shared between sibling components. We also installed and incorporated componenets from different libraries to further enhance the user experience, and are really excited about the embedded movie trailer videos!
 <p>
 <b>Challenges:</b><br>
 Working with React Router posed a unique challenge when we were trying to handle bad URLs. With some dedication and trial-and-error, we were able to come to a working solution to redirect users to a catch-all error component that offers an easy way back to the home page.
